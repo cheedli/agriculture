@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="app-container">
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Olive Expert</h2>
+            <button id="close-sidebar" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <button id="new-chat" class="new-chat-btn">
+                <i class="fas fa-plus"></i> New Chat
+            </button>
+            <div class="history-container" id="history-container">
+                <!-- Chat history will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="chat-header">
+            <button id="toggle-sidebar" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Olive Expert</h1>
+        </div>
+        
+        <div class="chat-container" id="chat-container">
+            <!-- Initial bot message -->
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Hello Zouhaier, how can I help you today?</p>
+                </div>
+            </div>
+            <!-- Chat messages will appear here -->
+        </div>
+        
+        <div class="input-container">
+            <div class="image-preview-container" id="image-preview-container"></div>
+            <form id="chat-form" class="chat-form">
+                <label for="image-upload" class="image-upload-btn">
+                    <i class="fas fa-image"></i>
+                </label>
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                
+                <textarea id="user-input" placeholder="Ask about olives or olive diseases..." rows="1"></textarea>
+                
+                <button type="submit" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
